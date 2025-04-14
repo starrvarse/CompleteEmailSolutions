@@ -1,4 +1,4 @@
-# Multi-Tenant Mail Server System Architecture
+``` # Multi-Tenant Mail Server System Architecture
 ====================================
 
 [ Public Internet ]
@@ -151,3 +151,4 @@
     ├── server.js             # Backend API entry point (e.g., starts Express server)
     ├── README.md             # Main project documentation
     └── ARCHITECTURE.md       # This file
+```
