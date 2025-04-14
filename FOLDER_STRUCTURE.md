@@ -3,7 +3,7 @@
 This diagram visualizes the suggested folder structure for the project.
 
 ```mermaid
-graph TD
+graph LR
     A[complete-email-solutions] --> B(api);
     A --> C(my-mail-server);
     A --> D(prisma);
