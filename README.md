@@ -1,20 +1,27 @@
-# Custom Multi-Tenant Mail Server System (Haraka + Node.js)
+#  🚀 Custom Multi-Tenant Mail Server System (Haraka + Node.js)
+A complete, multi-tenant mail server system built entirely with Node.js, featuring domain-based email management, DNS verification, and custom SMTP using Haraka.
 
-## Overview
+---
+
+## 📌 Overview
 
 This project provides a complete, multi-tenant mail server system built entirely with Node.js technologies, primarily using Haraka for the SMTP server. It allows companies to sign up, manage their own domains and email users, ensuring data isolation between tenants. A key feature is mandatory DNS verification for domain ownership before a domain can be used for sending emails.
 
-## Goal
+---
 
-To build a secure, scalable, and cross-platform (Windows & Linux) mail system where:
-- Each user belongs to a specific company.
-- The first user signing up for a company becomes the admin.
-- Admins can manage domains, email IDs, and potentially API access for their company.
+## 🎯 Goal
+
+To build a secure, scalable, and **cross-platform** (Windows & Linux) mail system where:
+- 🏢 Each user belongs to a specific company.
+- 👤 First user signing up for a company becomes the admin.
+- 🌐 Admins can manage domains, email IDs, and potentially API access for their company.
 - Data is strictly segregated per company (tenant).
-- Domain ownership must be verified via DNS TXT records before activation.
-- The system uses Haraka for SMTP, avoiding dependencies like Postfix.
+- 🔐 Domain ownership must be verified via DNS TXT records before activation.
+- ✉️ The system uses Haraka for SMTP, avoiding dependencies like Postfix.
 
-## Features
+---
+
+## ✨ Features
 
 - **Multi-Tenancy:** Securely isolates data and configuration per company.
 - **Admin Role:** Automatic admin assignment upon company signup.
@@ -25,30 +32,36 @@ To build a secure, scalable, and cross-platform (Windows & Linux) mail system wh
 - **Email Storage:** Simple filesystem storage for incoming emails (customizable).
 - **Email Sending:** Uses Nodemailer for outbound mail via the local Haraka instance.
 - **Cross-Platform:** Designed to run on both Windows and Linux.
+---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **SMTP Server:** [Haraka](https://haraka.github.io/) (Node.js)
-- **Backend Framework:** [Express.js](https://expressjs.com/)
-- **Database ORM:** [Prisma](https://www.prisma.io/)
-- **Database:** SQLite (default) / PostgreSQL (recommended for production)
-- **Frontend Build Tool:** [Vite](https://vitejs.dev/)
-- **Frontend Framework:** [React](https://reactjs.org/) (+ [Tailwind CSS](https://tailwindcss.com/))
-- **Webmail UI:** Custom (Built with Vite+React) or [SnappyMail](https://github.com/the-djmaze/snappymail)
-- **Email Parsing:** [mailparser](https://nodemailer.com/extras/mailparser/) (Node.js)
-- **Email Sending:** [Nodemailer](https://nodemailer.com/)
-- **Authentication:** JWT + [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
-- **Email Storage:** Filesystem (default) or S3-compatible storage
-- **Real-time (Optional):** [Socket.IO](https://socket.io/)
+| Category           | Tech                                      |
+|--------------------|-------------------------------------------|
+| SMTP Server        | [Haraka](https://haraka.github.io/)       |
+| Backend            | [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/) |
+| ORM + DB           | [Prisma](https://www.prisma.io/) + SQLite/PostgreSQL |
+| Frontend           | [React](https://reactjs.org/) + [Vite](https://vitejs.dev/) |
+| Styling            | [Tailwind CSS](https://tailwindcss.com/) |
+| Webmail UI         | Custom or [SnappyMail](https://github.com/the-djmaze/snappymail) |
+| Email Sending      | [Nodemailer](https://nodemailer.com/)     |
+| Email Parsing      | [mailparser](https://nodemailer.com/extras/mailparser/) |
+| Authentication     | JWT + [bcrypt](https://github.com/kelektiv/node.bcrypt.js) |
+| Storage (Optional) | Filesystem or S3-compatible               |
+| Real-Time (Optional)| [Socket.IO](https://socket.io/)          |
 
-## Prerequisites
+---
+
+## ✅ Prerequisites
 
 - **Operating System:** Windows 10/11 or Ubuntu 20.04+
 - **Domain:** A public domain name (e.g., `yourcompany.com`) for which you can manage DNS records.
 - **Node.js:** Version 16 or higher (Install from [nodejs.org](https://nodejs.org/)).
 - **Open Ports:** Ensure ports 25 (SMTP), 587 (Submission), and potentially 993 (IMAP if using SnappyMail/custom IMAP) are open on your server/firewall.
 
-## Installation & Setup
+---
+
+## ⚙️ Installation & Setup
 
 1.  **Install Node.js:**
     *   **Windows:** Download and run the installer from [nodejs.org](https://nodejs.org/).
@@ -115,9 +128,8 @@ To build a secure, scalable, and cross-platform (Windows & Linux) mail system wh
     *   Start the Express.js backend API (from root): `npm run start` or `npm run dev`.
     *   Start the Vite development server for the UI (from `web-ui` directory): `npm run dev`.
 
-## Configuration
-
-### Haraka Plugins (`my-mail-server/config/plugins`)
+🧩 Configuration Details
+🔌 Haraka Plugins (`my-mail-server/config/plugins`)
 
 Ensure at least the following plugins are enabled (remove the `#`):
 
